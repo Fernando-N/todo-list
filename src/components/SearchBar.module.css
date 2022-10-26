@@ -8,6 +8,14 @@
   margin-top: calc(0px - 1.625rem);
 }
 
+@media (max-width: 45rem) {
+  .task {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: calc(0px - 2.625rem);
+  }
+}
+
 .task input {
   border: 0;
   font-size: 1rem;
