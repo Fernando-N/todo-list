@@ -2,7 +2,7 @@
 
 > Status: Work on my machine
 
-### It's a challenge from the course on Rocketseat
+### It's a challenge from the course on Rocketseat created by me
 
 ## Technologies used:
 
