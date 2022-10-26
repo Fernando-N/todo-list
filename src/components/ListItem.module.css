@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  margin: 0 auto 0.75rem auto;
+
+  font-size: 0.875rem;
+
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+  background: var(--gray-400);
+  color: var(--gray-100);
+
+  align-items: flex-start;
+
+  max-width: 46rem;
+  min-height: 4.5rem;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content input {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  z-index: -99;
+  top: -90px;
+}
+
+.checkbox {
+  padding: 1rem 0.75rem 2rem 1rem;
+}
+
+.content input + .checkbox::before {
+  content: '';
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue-300);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.content input:checked + .checkbox::before {
+  background: url('../assets/Vector.svg') center center no-repeat;
+  background-size: 0.75rem;
+}
+
+label {
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  padding: 1rem;
+}
+
+input:checked label {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.icon {
+  color: var(--gray-300);
+  padding: 1rem 1rem 1.8125rem 0.75rem;
+}
