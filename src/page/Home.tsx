@@ -13,7 +13,8 @@ export interface Item {
   done: boolean
 }
 
-const tasks = JSON.parse(localStorage.getItem('tasks') || '{}')
+const task = JSON.parse(localStorage.getItem('tasks') || '{}')
+const tasks = task
 
 export function Home() {
   const [list, setList] = useState<Item[]>(tasks)
