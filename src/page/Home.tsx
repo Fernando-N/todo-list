@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { Header } from '../components/Header'
 import { ListItem } from '../components/ListItem'
@@ -13,18 +13,10 @@ export interface Item {
   done: boolean
 }
 
-const task = JSON.parse(localStorage.getItem('tasks') || '{}')
-const tasks = task
-
 export function Home() {
-  const [list, setList] = useState<Item[]>(tasks)
-
-  function saveData() {
-    const newData = [...list]
-
-    localStorage.setItem('tasks', JSON.stringify(newData))
-  }
-  saveData()
+  const [list, setList] = useState<Item[]>(
+    JSON.parse(localStorage.getItem('tasks') || '[]') || []
+  )
 
   function handleAddTask(taskName: string) {
     let newList = [...list]
@@ -33,15 +25,15 @@ export function Home() {
       title: taskName,
       done: false
     })
+    localStorage.setItem('tasks', JSON.stringify(newList))
     setList(newList)
-    saveData()
   }
 
   function handleDeleteTask(id: string) {
     let newList = [...list].filter(task => task.id !== id)
+    localStorage.setItem('tasks', JSON.stringify(newList))
 
     setList(newList)
-    saveData()
   }
 
   function handleTaskState(id: string) {
@@ -52,6 +44,7 @@ export function Home() {
         task.done = !task.done
       }
     })
+    localStorage.setItem('tasks', JSON.stringify(updateTask))
 
     setList(updateTask)
   }
@@ -76,7 +69,6 @@ export function Home() {
                   {list.reduce((value, currentValue) => {
                     if (currentValue.done === true) {
                       value++
-                      console.log(currentValue.done)
                     }
                     return value
                   }, 0)}{' '}
