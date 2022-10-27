@@ -1,6 +1,8 @@
 <h1>Todo List</h1>
 
-> Status: Work on my machine
+> Status: Works on my machine
+
+<a href="https://todo-list-7uoa09no3-fernando-n.vercel.app" target="_blank">Project online</a>
 
 ### It's a challenge from the course on Rocketseat created by me
 
